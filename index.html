@@ -7,29 +7,48 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">PlantFuel Logo</a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <a href="#">Sign Up</a>
-        </nav>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="company-logo-link">
+                <!-- Placeholder for logo image -->
+                <span class="company-logo-text">PlantFuel</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#signup" class="button btn-primary nav-signup">Sign Up</a>
+        </div>
     </header>
 
     <main>
         <section id="hero">
             <h1>Fuel Your Performance, Naturally.</h1>
-            <p>Coming Soon...</p>
-            <a href="#">Join Early Access</a>
+            <p>Discover the power of plant-based nutrition. Coming Soon!</p>
+            <a href="#early-access" class="button btn-primary">Join Early Access</a>
+        </section>
+        <section id="products">
+            <h2>Our Products</h2>
+            <p>Details about products coming soon.</p>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Information about PlantFuel coming soon.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Contact details coming soon.</p>
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 PlantFuel. All rights reserved.</p>
+    <footer class="site-footer-main">
+        <div class="container">
+            <p>© <span id="current-year">2025</span> PlantFuel. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
