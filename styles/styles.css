@@ -70,6 +70,15 @@ ul {
     color: #fff;
 }
 
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.alt-bg {
+    background-color: #f8f9fa; /* Light grey for alternating sections */
+}
+
 /* --- Header & Navigation --- */
 .site-header {
     background-color: #f8f9fa;
@@ -110,13 +119,12 @@ ul {
 
 /* --- Hero Section --- */
 .hero-section {
-    background-color: #e9ecef; /* Light grey background for hero */
+    background-color: #e9ecef;
     padding: 4rem 0;
     text-align: center;
 }
 
 .hero-container {
-    /* If using flex later for side-by-side content and image */
     /* display: flex; */
     /* align-items: center; */
     /* gap: 2rem; */
@@ -133,13 +141,13 @@ ul {
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: #212529; /* Darker text for hero */
+    color: #212529;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: #495057; /* Slightly lighter text */
+    color: #495057;
 }
 
 .hero-actions {
@@ -159,9 +167,54 @@ ul {
     color: #6c757d;
 }
 
+/* --- Feature Section (Why Choose PlantFuel & Good Stuff) --- */
+.feature-section .feature-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.feature-section .feature-text-content {
+    flex: 1;
+}
+.feature-section .section-title {
+    text-align: left;
+}
+.feature-section .section-subtitle {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.feature-section p:not(.section-subtitle) {
+    margin-bottom: 1rem;
+}
+
+.feature-section .feature-image-placeholder {
+    flex: 1;
+    background-color: #ced4da;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #6c757d;
+}
+
+.feature-section .feature-container.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.good-stuff-section .tagline {
+    color: #007bff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
 
 /* --- Main Content (Other Sections) --- */
-main section:not(.hero-section) { /* Styles for sections other than hero */
+main section:not(.hero-section):not(.feature-section) {
     padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
@@ -169,11 +222,22 @@ main section:last-child {
     border-bottom: none;
 }
 
+.section-title { /* General title styling */
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.section-subtitle { /* General subtitle styling */
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
 h1 { /* General h1, hero has its own */
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Already defined, but for consistency */
     margin-bottom: 1rem;
 }
-h2 {
+h2 { /* General h2, section-title is more specific */
     font-size: 2rem;
     margin-bottom: 0.75rem;
 }
