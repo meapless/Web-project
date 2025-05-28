@@ -79,6 +79,10 @@ ul {
     background-color: #f8f9fa; /* Light grey for alternating sections */
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* --- Header & Navigation --- */
 .site-header {
     background-color: #f8f9fa;
@@ -122,12 +126,6 @@ ul {
     background-color: #e9ecef;
     padding: 4rem 0;
     text-align: center;
-}
-
-.hero-container {
-    /* display: flex; */
-    /* align-items: center; */
-    /* gap: 2rem; */
 }
 
 .hero-content {
@@ -212,9 +210,60 @@ ul {
     font-size: 0.9rem;
 }
 
+/* --- Benefits Section --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Or left, depending on design */
+}
+.benefit-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-slider {
+    /* Basic structure, JS will handle actual sliding */
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto; /* For now, allow horizontal scroll */
+    padding-bottom: 1rem; /* Space for scrollbar */
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    flex: 0 0 300px; /* Fixed width for cards for now */
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.testimonial-card blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #555;
+}
+.testimonial-author .author-name {
+    font-weight: bold;
+}
+.testimonial-author .author-title {
+    font-size: 0.9rem;
+    color: #777;
+}
+
 
 /* --- Main Content (Other Sections) --- */
-main section:not(.hero-section):not(.feature-section) {
+main section:not(.hero-section):not(.feature-section):not(.benefits-section):not(.testimonials-section) {
     padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
@@ -233,11 +282,11 @@ main section:last-child {
     margin-bottom: 1.5rem;
 }
 
-h1 { /* General h1, hero has its own */
-    font-size: 2.5rem; /* Already defined, but for consistency */
+h1 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
-h2 { /* General h2, section-title is more specific */
+h2 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
 }
