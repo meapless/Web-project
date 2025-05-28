@@ -223,7 +223,7 @@ ul {
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center; /* Or left, depending on design */
+    text-align: center;
 }
 .benefit-card h3 {
     font-size: 1.25rem;
@@ -233,16 +233,15 @@ ul {
 
 /* --- Testimonials Section --- */
 .testimonial-slider {
-    /* Basic structure, JS will handle actual sliding */
     display: flex;
     gap: 1.5rem;
-    overflow-x: auto; /* For now, allow horizontal scroll */
-    padding-bottom: 1rem; /* Space for scrollbar */
+    overflow-x: auto;
+    padding-bottom: 1rem;
     margin-top: 2rem;
 }
 
 .testimonial-card {
-    flex: 0 0 300px; /* Fixed width for cards for now */
+    flex: 0 0 300px;
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 5px;
@@ -261,9 +260,43 @@ ul {
     color: #777;
 }
 
+/* --- FAQ Section --- */
+.faq-accordion {
+    max-width: 700px;
+    margin: 2rem auto 0;
+}
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-answer {
+    /* JS will handle visibility */
+    padding: 0 0 1rem 0;
+    display: none; /* Hidden by default */
+}
+.faq-answer p {
+    margin: 0;
+    color: #555;
+}
+
 
 /* --- Main Content (Other Sections) --- */
-main section:not(.hero-section):not(.feature-section):not(.benefits-section):not(.testimonials-section) {
+main section:not(.hero-section):not(.feature-section):not(.benefits-section):not(.testimonials-section):not(.faq-section) {
     padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
@@ -271,12 +304,12 @@ main section:last-child {
     border-bottom: none;
 }
 
-.section-title { /* General title styling */
+.section-title {
     font-size: 2.25rem;
     margin-bottom: 1rem;
     color: #333;
 }
-.section-subtitle { /* General subtitle styling */
+.section-subtitle {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 1.5rem;
