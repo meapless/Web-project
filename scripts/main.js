@@ -3,14 +3,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Navigation Toggle ---
-    const navToggle = document.querySelector('.nav-toggle'); // Will add this button to HTML later
+    const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.main-nav .nav-links');
 
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('open');
-            // Add class to toggle for hamburger animation if needed
-            // navToggle.classList.toggle('open');
+            // navToggle.classList.toggle('open'); // For hamburger animation
         });
     }
 
@@ -35,6 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- FAQ Accordion ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const questionButton = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (questionButton && answer) {
+            questionButton.addEventListener('click', () => {
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                // Toggle aria-expanded attribute if you add it to the button
+                // questionButton.setAttribute('aria-expanded', !isOpen);
+            });
+        }
+    });
+
+    // --- Basic Testimonial Slider (Placeholder - more complex logic needed for actual sliding) ---
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    if (testimonialSlider) {
+        // console.log('Testimonial slider found. Full implementation pending.');
+        // For now, this just confirms the element is selectable.
+        // Actual sliding logic would involve tracking current slide, handling next/prev buttons etc.
+    }
+
 
     // --- Update current year in footer ---
     const currentYearSpan = document.getElementById('current-year');
