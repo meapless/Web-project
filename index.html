@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantFuel - Fuel Your Performance, Naturally</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <!-- Recommended: Add a favicon -->
     <!-- <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header class="site-header">
         <div class="container nav-container">
             <a href="#" class="company-logo-link"><img class="company-logo" src="assets/images/logo.jpg" alt="PlantFuel Logo"></a>
             <nav class="main-nav">
-                <button class="nav-toggle" aria-label="toggle navigation">
+                <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
                 <ul class="nav-links">
                     <li><a href="#hero" class="nav-link">Home</a></li>
                     <li><a href="#why-plantfuel" class="nav-link">Products</a></li>
                     <li><a href="#good-stuff" class="nav-link">About Us</a></li>
-                    <li><a href="#benefits" class="nav-link">Benefits</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                    <li><a href="#faq" class="nav-link">Contact Us</a></li> <!-- FAQ has a contact section -->
                 </ul>
             </nav>
             <a href="#early-access-cta" class="button btn-primary nav-signup">Sign Up</a>
@@ -30,35 +30,36 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content">
                     <h1 class="hero-title">Fuel Your Performance, Naturally.</h1>
                     <p class="hero-subtitle">
-                        Discover the power of plant-based nutrition for sustained energy and clean muscle fuel.
+                        Discover the power of plant-based nutrition for sustained energy and clean muscle fuel. Elevate
+                        your workouts with our delicious, high-protein snacks.
                     </p>
                     <div class="hero-actions">
                         <a href="#early-access-cta" class="button btn-primary">Join Early Access</a>
-                        <a href="#learn-more" class="button btn-secondary">Learn More</a>
+                        <a href="#early-access-cta" class="button btn-secondary">Sign Up</a>
                     </div>
                 </div>
-                <div class="hero-image-grid"> <!-- Changed from placeholder to grid -->
+                <div class="hero-image-grid">
                     <div class="hero-image-col">
-                        <img src="assets/images/1.jpg" alt="PlantFuel lifestyle image 1">
-                        <img src="assets/images/2.jpg" alt="PlantFuel lifestyle image 2">
+                        <img src="assets/images/1.jpg" alt="Person exercising outdoors">
+                        <img src="assets/images/2.jpg" alt="Healthy plant-based meal">
+                        <img src="assets/images/3.jpg" alt="PlantFuel Product Packaging">
                     </div>
                     <div class="hero-image-col">
-                        <img src="assets/images/3.jpg" alt="PlantFuel product image 1">
-                        <img src="assets/images/4.jpg" alt="PlantFuel lifestyle image 3">
-                    </div>
-                     <div class="hero-image-col">
-                        <img src="assets/images/5.jpg" alt="PlantFuel product image 2">
-                        <img src="assets/images/6.jpg" alt="PlantFuel ingredients">
+                        <img src="assets/images/4.jpg" alt="Close up of PlantFuel bar">
+                        <img src="assets/images/5.jpg" alt="Person stretching">
+                        <img src="assets/images/6.jpg" alt="Ingredients like nuts and seeds">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Why Choose PlantFuel? Section -->
         <section id="why-plantfuel" class="feature-section section-padding">
             <div class="container feature-container">
                 <div class="feature-text-content">
@@ -70,11 +71,12 @@
                     </p>
                 </div>
                 <div class="feature-image">
-                     <img src="assets/images/8.jpg" alt="Assortment of PlantFuel bars">
+                    <img src="assets/images/8.jpg" alt="Assortment of PlantFuel bars">
                 </div>
             </div>
         </section>
 
+        <!-- Only the Good Stuff Section -->
         <section id="good-stuff" class="good-stuff-section section-padding alt-bg">
             <div class="container feature-container reverse-layout">
                 <div class="feature-text-content">
@@ -84,106 +86,170 @@
                         At PlantFuel, we believe in transparency. Our snacks are made with the
                         finest ingredients, ensuring you get the best without any hidden additives.
                     </p>
-                     <a href="#" class="button btn-secondary">Learn More</a>
+                    <div class="ingredient-highlights">
+                        <div class="highlight-item">
+                            <h3>Natural Ingredients</h3>
+                            <p>Lentils and quinoa provide clean energy for your active lifestyle.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h3>No Preservatives</h3>
+                            <p>Enjoy wholesome snacks that are free from preservatives and artificial ingredients.</p>
+                        </div>
+                    </div>
+                    <div class="good-stuff-actions">
+                        <a href="#" class="button btn-secondary">Learn More</a>
+                        <a href="#" class="link-with-arrow">Explore <img src="assets/images/icons/arrow-right-icon.svg" alt="" class="arrow-icon"></a>
+                    </div>
                 </div>
                 <div class="feature-image">
-                    <img src="assets/images/9.jpg" alt="Close up of PlantFuel ingredients">
+                    <img src="assets/images/9.jpg" alt="Close up of lentils, quinoa and other ingredients">
                 </div>
             </div>
         </section>
 
+        <!-- Unique Benefits Section -->
         <section id="benefits" class="benefits-section section-padding">
             <div class="container">
-                <h2 class="section-title text-center">Discover the Unique Benefits</h2>
+                <h2 class="section-title text-center">Discover the Unique Benefits of PlantFuel Snacks for Your Active Lifestyle</h2>
                 <div class="benefits-grid">
                     <article class="benefit-card">
                         <img src="assets/images/icons/energy-icon.svg" alt="Energy Icon" class="benefit-icon">
-                        <h3>Benefit One</h3>
-                        <p>Description of the first amazing benefit.</p>
+                        <h3>PlantFuel: Your Go-To Snack for Energy and Recovery</h3>
+                        <p>Our snacks are designed to fuel your workouts and keep you energized.</p>
+                        <a href="#" class="link-with-arrow">Learn More <img src="assets/images/icons/chevron-right-icon.svg" alt="" class="arrow-icon"></a>
                     </article>
                     <article class="benefit-card">
                         <img src="assets/images/icons/bars-bites-icon.svg" alt="Bars & Bites Icon" class="benefit-icon">
-                        <h3>Benefit Two</h3>
-                        <p>Description of the second fantastic benefit.</p>
+                        <h3>Enjoy Delicious Bars and Bites for Every Moment of Your Day</h3>
+                        <p>Perfect for post-workout recovery or a quick energy boost on the go.</p>
+                        <a href="#" class="link-with-arrow">Explore <img src="assets/images/icons/chevron-right-icon.svg" alt="" class="arrow-icon"></a>
                     </article>
                     <article class="benefit-card">
                         <img src="assets/images/icons/taste-nutrition-icon.svg" alt="Taste & Nutrition Icon" class="benefit-icon">
-                        <h3>Benefit Three</h3>
-                        <p>Description of the third incredible benefit.</p>
+                        <h3>Experience the Perfect Blend of Taste and Nutrition with PlantFuel</h3>
+                        <p>Our bars and bites are crafted to satisfy your cravings without compromise.</p>
+                        <a href="#" class="link-with-arrow">Shop Now <img src="assets/images/icons/chevron-right-icon.svg" alt="" class="arrow-icon"></a>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials-section section-padding alt-bg">
             <div class="container">
-                <h2 class="section-title text-center">What Our Testers Say</h2>
+                <h2 class="section-title text-center">What Our Early Testers Say</h2>
+                <p class="section-subtitle text-center">Real feedback from our passionate snackers.</p>
                 <div class="testimonial-slider">
-                    <article class="testimonial-card">
-                        <blockquote>"This is the best snack ever!"</blockquote>
-                        <div class="testimonial-author">
-                            <img src="assets/images/13.jpg" alt="Alex P. avatar" class="avatar-image">
-                            <p class="author-name">Alex P.</p>
-                            <p class="author-title">Marathon Runner</p>
+                    <div class="testimonial-cards">
+                        <article class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"PlantFuel bars are my go-to for post-workout energy!"</blockquote>
+                            <div class="testimonial-author">
+                                <img src="assets/images/13.jpg" alt="Alex P. - Testimonial Avatar" class="avatar-image">
+                                <div>
+                                    <p class="author-name">Alex P.</p>
+                                    <p class="author-title">Marathon Runner</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"I love how convenient they are for my busy lifestyle!"</blockquote>
+                            <div class="testimonial-author">
+                                <img src="assets/images/12.jpg" alt="Jamie L. - Testimonial Avatar" class="avatar-image">
+                                <div>
+                                    <p class="author-name">Jamie L.</p>
+                                    <p class="author-title">Fitness Coach</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev-arrow" aria-label="Previous testimonial"><img src="assets/images/icons/arrow-left-alt.svg" alt=""></button>
+                        <div class="slider-dots">
+                            <button class="dot active" aria-label="Go to slide 1"></button>
+                            <button class="dot" aria-label="Go to slide 2"></button>
                         </div>
-                    </article>
-                    <article class="testimonial-card">
-                        <blockquote>"I can't get enough of PlantFuel!"</blockquote>
-                        <div class="testimonial-author">
-                            <img src="assets/images/12.jpg" alt="Jamie L. avatar" class="avatar-image">
-                            <p class="author-name">Jamie L.</p>
-                            <p class="author-title">Fitness Coach</p>
-                        </div>
-                    </article>
+                        <button class="slider-arrow next-arrow" aria-label="Next testimonial"><img src="assets/images/icons/arrow-right-alt.svg" alt=""></button>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- FAQ Section -->
         <section id="faq" class="faq-section section-padding">
             <div class="container">
-                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <h2 class="section-title text-center">FAQs</h2>
+                <p class="section-subtitle text-center">Here are some common questions about PlantFuel snacks and our early access program.</p>
                 <div class="faq-accordion">
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Are PlantFuel snacks vegan?</span>
                             <img src="assets/images/icons/plus-icon.svg" alt="Expand" class="faq-icon plus">
-                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus" style="display:none;">
+                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus">
                         </button>
                         <div class="faq-answer">
-                            <p>Yes! All PlantFuel snacks are 100% vegan.</p>
+                            <p>Yes! All PlantFuel snacks are 100% vegan, made from high-quality plant-based ingredients to support your active lifestyle.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>Where are ingredients sourced?</span>
                             <img src="assets/images/icons/plus-icon.svg" alt="Expand" class="faq-icon plus">
-                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus" style="display:none;">
+                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus">
                         </button>
                         <div class="faq-answer">
-                            <p>We source our ingredients from trusted farms.</p>
+                            <p>We source our ingredients from trusted farms that prioritize sustainability and quality. Our lentils and quinoa are grown in nutrient-rich soils to ensure maximum flavor and nutrition.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
+                        <button class="faq-question" aria-expanded="false">
                             <span>When will PlantFuel launch?</span>
                             <img src="assets/images/icons/plus-icon.svg" alt="Expand" class="faq-icon plus">
-                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus" style="display:none;">
+                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus">
                         </button>
                         <div class="faq-answer">
-                            <p>PlantFuel is set to launch in early 2024. Stay tuned!</p>
+                            <p>PlantFuel is set to launch in early 2024. Stay tuned for updates and exclusive early access offers!</p>
                         </div>
                     </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I join early access?</span>
+                            <img src="assets/images/icons/plus-icon.svg" alt="Expand" class="faq-icon plus">
+                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus">
+                        </button>
+                        <div class="faq-answer">
+                            <p>Joining early access is simple! Just enter your email address in the signup form, and you'll be among the first to try our delicious snacks.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Still have questions?</span>
+                            <img src="assets/images/icons/plus-icon.svg" alt="Expand" class="faq-icon plus">
+                            <img src="assets/images/icons/minus-icon.svg" alt="Collapse" class="faq-icon minus">
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're here to help! If you have any other questions, feel free to reach out to our support team.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-contact-cta">
+                    <h3>Contact Us</h3>
+                    <p>We're happy to assist you!</p>
+                    <a href="#" class="button btn-secondary">Contact</a>
                 </div>
             </div>
         </section>
 
+        <!-- Be the First to Try (CTA Section) -->
         <section id="early-access-cta" class="cta-section section-padding alt-bg">
             <div class="container cta-container">
                 <div class="cta-content">
                     <h2 class="section-title">Be the First to Try PlantFuel!</h2>
-                    <p>Join our early access list for exclusive updates.</p>
+                    <p>Join our early access list for exclusive updates and be the first to taste!</p>
                     <div class="cta-actions">
                         <a href="#" class="button btn-primary">Join Now</a>
+                        <a href="#" class="button btn-secondary-outline">Get Early Access</a>
                     </div>
                 </div>
                 <div class="cta-image">
@@ -191,14 +257,14 @@
                 </div>
             </div>
         </section>
-
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer-main">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo-column">
-                    <a href="#" class="company-logo-link"><img class="company-logo" src="assets/images/logo.jpg" alt="PlantFuel Logo"></a>
+                    <a href="#"><img class="company-logo" src="assets/images/logo.jpg" alt="PlantFuel Logo"></a>
                 </div>
                 <div class="footer-links-group">
                     <h4>Quick Links</h4>
@@ -206,7 +272,9 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#why-plantfuel">Products</a></li>
                         <li><a href="#good-stuff">About Us</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#faq">Contact Us</a></li>
+                        <li><a href="#">Blog Posts</a></li>
+                        <li><a href="#early-access-cta">Join Us</a></li>
                     </ul>
                 </div>
                  <div class="footer-links-group">
@@ -214,14 +282,17 @@
                     <ul class="footer-links">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="#"><img src="assets/images/icons/facebook.svg" alt="Facebook"></a>
-                        <a href="#"><img src="assets/images/icons/instagram.svg" alt="Instagram"></a>
-                        <a href="#"><img src="assets/images/icons/x-twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Facebook"><img src="assets/images/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="assets/images/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter / X"><img src="assets/images/icons/x-twitter.svg" alt="X (Twitter)"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="assets/images/icons/linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#" aria-label="YouTube"><img src="assets/images/icons/youtube.svg" alt="YouTube"></a>
                     </div>
                 </div>
             </div>
