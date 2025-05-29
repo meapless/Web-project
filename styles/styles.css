@@ -76,7 +76,7 @@ ul {
 }
 
 .alt-bg {
-    background-color: #f8f9fa; /* Light grey for alternating sections */
+    background-color: #f8f9fa;
 }
 
 .text-center {
@@ -165,7 +165,7 @@ ul {
     color: #6c757d;
 }
 
-/* --- Feature Section (Why Choose PlantFuel & Good Stuff) --- */
+/* --- Feature Section --- */
 .feature-section .feature-container {
     display: flex;
     align-items: center;
@@ -285,22 +285,119 @@ ul {
     align-items: center;
 }
 .faq-answer {
-    /* JS will handle visibility */
     padding: 0 0 1rem 0;
-    display: none; /* Hidden by default */
+    display: none;
 }
 .faq-answer p {
     margin: 0;
     color: #555;
 }
 
+/* --- CTA Section --- */
+.cta-section .cta-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: #007bff; /* Primary color background */
+    color: #fff;
+    padding: 3rem;
+    border-radius: 5px;
+}
+.cta-content {
+    flex: 1;
+}
+.cta-content .section-title,
+.cta-content p {
+    color: #fff;
+    text-align: left;
+}
+.cta-content .section-title {
+    margin-bottom: 0.5rem;
+}
+.cta-content p {
+    margin-bottom: 1.5rem;
+}
+.cta-actions .btn-primary { /* Button on dark background */
+    background-color: #fff;
+    color: #007bff;
+    border-color: #fff;
+}
+.cta-actions .btn-primary:hover {
+    background-color: #e9ecef;
+}
+.cta-image-placeholder {
+    flex: 1;
+    background-color: #adb5bd; /* Darker placeholder for contrast */
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #fff;
+}
 
-/* --- Main Content (Other Sections) --- */
-main section:not(.hero-section):not(.feature-section):not(.benefits-section):not(.testimonials-section):not(.faq-section) {
+
+/* --- Footer --- */
+.site-footer-main {
+    background-color: #343a40; /* Darker footer */
+    color: #f8f9fa;
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.footer-logo-column .company-logo-text {
+    color: #fff;
+    margin-bottom: 1rem;
+    display: block;
+}
+.footer-links-group h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+.footer-links a {
+    color: #adb5bd;
+}
+.footer-links a:hover {
+    color: #fff;
+}
+.social-links a {
+    margin-right: 0.5rem;
+    color: #adb5bd;
+    font-size: 1.2rem; /* For text placeholders */
+}
+.social-links a:hover {
+    color: #fff;
+}
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #495057;
+    margin: 2rem 0;
+}
+.footer-credits {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+.footer-credits p { margin-bottom: 0;}
+
+
+/* --- Main Content (Other Sections - ensure this is general) --- */
+main section:not(.hero-section):not(.feature-section):not(.benefits-section):not(.testimonials-section):not(.faq-section):not(.cta-section) {
     padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
-main section:last-child {
+main section:last-child { /* This should apply to the last actual content section before footer */
     border-bottom: none;
 }
 
@@ -322,14 +419,4 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
-}
-
-
-/* --- Footer --- */
-.site-footer-main {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e7e7e7;
-    margin-top: 2rem;
 }
