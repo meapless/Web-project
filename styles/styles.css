@@ -88,6 +88,9 @@ ul {
     background-color: #f8f9fa;
     padding: 1rem 0;
     border-bottom: 1px solid #e7e7e7;
+    position: sticky; /* Added for later smooth scroll offset */
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
@@ -101,6 +104,34 @@ ul {
     font-weight: bold;
     color: #333;
 }
+
+.main-nav .nav-toggle { /* Hamburger button */
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.main-nav .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+}
+.main-nav .hamburger::before,
+.main-nav .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+.main-nav .hamburger::before { top: -8px; }
+.main-nav .hamburger::after { bottom: -8px; }
+
 
 .main-nav .nav-links {
     display: flex;
@@ -298,7 +329,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 2rem;
-    background-color: #007bff; /* Primary color background */
+    background-color: #007bff;
     color: #fff;
     padding: 3rem;
     border-radius: 5px;
@@ -317,7 +348,7 @@ ul {
 .cta-content p {
     margin-bottom: 1.5rem;
 }
-.cta-actions .btn-primary { /* Button on dark background */
+.cta-actions .btn-primary {
     background-color: #fff;
     color: #007bff;
     border-color: #fff;
@@ -327,7 +358,7 @@ ul {
 }
 .cta-image-placeholder {
     flex: 1;
-    background-color: #adb5bd; /* Darker placeholder for contrast */
+    background-color: #adb5bd;
     min-height: 150px;
     display: flex;
     align-items: center;
@@ -339,7 +370,7 @@ ul {
 
 /* --- Footer --- */
 .site-footer-main {
-    background-color: #343a40; /* Darker footer */
+    background-color: #343a40;
     color: #f8f9fa;
     padding: 3rem 0 1rem;
     margin-top: 2rem;
@@ -373,7 +404,7 @@ ul {
 .social-links a {
     margin-right: 0.5rem;
     color: #adb5bd;
-    font-size: 1.2rem; /* For text placeholders */
+    font-size: 1.2rem;
 }
 .social-links a:hover {
     color: #fff;
@@ -397,7 +428,7 @@ main section:not(.hero-section):not(.feature-section):not(.benefits-section):not
     padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
-main section:last-child { /* This should apply to the last actual content section before footer */
+main section:last-child {
     border-bottom: none;
 }
 
@@ -419,4 +450,99 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
+}
+
+/* --- Responsive Design (Basic) --- */
+
+/* Medium screens (Tablets) */
+@media (max-width: 992px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+
+    .feature-section .feature-container,
+    .feature-section .feature-container.reverse-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .feature-section .section-title,
+    .feature-section .section-subtitle {
+        text-align: center;
+    }
+    .feature-section .feature-image-placeholder {
+        margin-top: 1.5rem;
+        min-height: 200px;
+    }
+
+    .cta-section .cta-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cta-content .section-title,
+    .cta-content p {
+        text-align: center;
+    }
+    .cta-image-placeholder {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 768px) {
+    .main-nav .nav-toggle {
+        display: block; /* Show hamburger */
+        z-index: 1001;
+    }
+    .main-nav .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 70%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 60px 20px 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        gap: 10px;
+    }
+    .main-nav .nav-links.open {
+        right: 0; /* Slide in */
+    }
+    .main-nav .nav-link {
+        font-size: 1.2rem;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .main-nav .nav-link:hover {
+        border-bottom: 1px solid #007bff; /* Keep consistent for mobile */
+    }
+    .nav-signup {
+        display: none; /* Often hidden or moved into mobile menu */
+    }
+
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-image-placeholder { display: none; } /* Often hidden on small mobile */
+
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Stack benefit cards */
+    }
+
+    .testimonial-slider {
+        /* Rely on swipe for mobile */
+    }
+    .testimonial-card {
+        flex: 0 0 85%; /* One card slightly smaller than full width */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        text-align: center;
+    }
+    .footer-logo-column .company-logo-text {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
 }
