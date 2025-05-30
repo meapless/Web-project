@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Specific triggers for the modal
     const openModalTriggers = document.querySelectorAll(
-        '.nav-signup, .hero-actions a.button[href="#early-access-cta"], .cta-actions a.button[href="#"]' // Adjusted CTA selector
+        '.nav-signup, .hero-actions a.button[href="#early-access-cta"], .cta-actions a.button[href="#"], a.nav-link[href="#contact-modal"]' // Added Contact Us nav link
     );
     const closeModalButton = earlyAccessModal ? earlyAccessModal.querySelector('.modal-close') : null;
 
