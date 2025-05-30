@@ -654,19 +654,24 @@ h4 { font-size: 1.25rem; }/* ~20px */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
+    font-size: 1.2rem; /* Adjust emoji size */
+    color: var(--text-color-dark); /* Initial color for emoji */
 }
-.slider-arrow img {
+/* Remove styles specific to img if they exist */
+/* .slider-arrow img {
     width: 16px;
     height: 16px;
-}
+} */
 .slider-arrow:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+    color: var(--text-color-light); /* Emoji color on hover */
 }
-.slider-arrow:hover img {
+/* Remove filter if it was for img */
+/* .slider-arrow:hover img {
     filter: brightness(0) invert(1);
-}
+} */
 .slider-dots {
     display: flex;
     gap: var(--spacing-sm);
@@ -1022,9 +1027,15 @@ body.dark-theme .slider-arrow:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
-body.dark-theme .slider-arrow:hover img {
-    filter: brightness(0) invert(1);
+body.dark-theme .slider-arrow {
+    color: var(--dark-text-color-dark); /* Dark theme emoji color */
 }
+body.dark-theme .slider-arrow:hover {
+    color: var(--text-color-light); /* Dark theme emoji color on hover */
+}
+/* body.dark-theme .slider-arrow:hover img {
+    filter: brightness(0) invert(1);
+} */
 body.dark-theme .dot {
     background-color: var(--dark-border-color);
 }
