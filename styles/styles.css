@@ -560,15 +560,16 @@ h4 { font-size: 1.25rem; }/* ~20px */
     border-radius: var(--border-radius);
     text-align: left; /* Aligns with design */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
 }
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-8px); /* Slightly more lift */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Enhanced shadow on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
 }
 .benefit-icon {
-    width: 48px; /* Adjust icon size */
-    height: 48px;
+    width: 60px; /* Increased icon size */
+    height: 60px; /* Increased icon size */
     margin-bottom: var(--spacing-lg);
     /* If SVGs, you can use 'fill: var(--text-color-light);' */
 }
@@ -1001,8 +1002,12 @@ body.dark-theme #benefits.benefits-section .benefit-icon {
     filter: brightness(0) invert(1); /* Keep icons white */
 }
 body.dark-theme .benefit-card {
-    background-color: rgba(0, 0, 0, 0.2); /* Darker cards */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.25); /* Slightly darker/more distinct cards */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35); /* More distinct shadow */
+}
+body.dark-theme .benefit-card:hover {
+    background-color: rgba(0, 0, 0, 0.35); /* Lighter on hover for dark theme */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
 
 
