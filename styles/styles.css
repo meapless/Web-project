@@ -28,6 +28,15 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition-speed: 0.3s ease;
+
+    /* Dark Theme Variables (can be overridden by JS or a body class) */
+    --dark-primary-color: #388E3C; /* Darker Green */
+    --dark-background-light: #212121; /* Very Dark Grey/Black */
+    --dark-background-alt: #303030;   /* Dark Grey */
+    --dark-text-color-dark: #E0E0E0;    /* Light Grey for text */
+    --dark-text-color-light: #FFFFFF;
+    --dark-border-color: #424242;     /* Medium Grey for borders */
+    --dark-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Basic Reset */
@@ -260,7 +269,26 @@ h4 { font-size: 1.25rem; }/* ~20px */
 .nav-links {
     display: flex;
     gap: var(--spacing-lg);
+    align-items: center; /* Align items including theme toggle */
 }
+
+.theme-toggle-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color-dark);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem; /* Adjust if using an icon font or SVG */
+    margin-left: var(--spacing-md); /* Space it from nav links */
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+.theme-toggle-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-color: var(--primary-color);
+}
+
 
 .nav-link {
     font-weight: var(--font-weight-medium);
@@ -778,10 +806,266 @@ h4 { font-size: 1.25rem; }/* ~20px */
         transition: filter var(--transition-speed);
     }
     .social-links a:hover img {
-        filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
     }
 
+/* --- Dark Theme Styles --- */
+body.dark-theme {
+    --primary-color: var(--dark-primary-color); /* Use dark theme primary */
+    --text-color-dark: var(--dark-text-color-dark);
+    --text-color-light: var(--dark-text-color-light);
+    --background-light: var(--dark-background-light);
+    --background-alt: var(--dark-background-alt);
+    --border-color: var(--dark-border-color);
+    --box-shadow: var(--dark-box-shadow);
+    /* Specific overrides for elements that don't use variables directly or need inversion */
+}
+
+body.dark-theme .site-header {
+    background-color: var(--dark-background-alt); /* Slightly different from body for depth */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+body.dark-theme .company-logo-text {
+    color: var(--primary-color); /* Use the new primary color for dark theme */
+}
+body.dark-theme .nav-link {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .nav-link:hover, body.dark-theme .nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+body.dark-theme .hamburger,
+body.dark-theme .hamburger::before,
+body.dark-theme .hamburger::after {
+    background-color: var(--dark-text-color-dark);
+}
+body.dark-theme .theme-toggle-button {
+    color: var(--dark-text-color-dark);
+    border-color: var(--dark-border-color);
+}
+body.dark-theme .theme-toggle-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Ensure contrast on hover */
+    border-color: var(--primary-color);
+}
+
+
+body.dark-theme .hero-section {
+    background-color: var(--primary-color); /* Dark theme primary */
+    color: var(--text-color-light); /* Ensure hero text is light */
+}
+body.dark-theme .hero-title {
+    color: var(--text-color-light);
+}
+body.dark-theme .hero-subtitle {
+    color: rgba(255,255,255,0.85); /* Lighter for dark bg */
+}
+body.dark-theme .hero-actions .btn-primary {
+    background-color: var(--text-color-light);
+    color: var(--primary-color); /* Use dark theme primary for text */
+    border-color: var(--text-color-light);
+}
+body.dark-theme .hero-actions .btn-primary:hover {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+body.dark-theme .hero-actions .btn-secondary {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+body.dark-theme .hero-actions .btn-secondary:hover {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+}
+
+
+body.dark-theme .feature-section .section-title,
+body.dark-theme .good-stuff-section .section-title {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .feature-section .section-subtitle,
+body.dark-theme .good-stuff-section .section-subtitle {
+    color: #B0B0B0; /* Lighter grey for subtitles */
+}
+body.dark-theme .feature-section p:not(.section-subtitle),
+body.dark-theme .good-stuff-section p:not(.section-subtitle) {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .good-stuff-section .tagline {
+    color: var(--primary-color); /* Use dark theme primary */
+}
+body.dark-theme .feature-image img,
+body.dark-theme .hero-image-col img {
+    /* Optional: slightly reduce brightness of images in dark mode */
+    /* filter: brightness(0.9); */
+}
+
+
+body.dark-theme #benefits.benefits-section {
+    background-color: var(--dark-background-alt); /* Darker than main dark bg for contrast */
+}
+body.dark-theme #benefits.benefits-section .section-title,
+body.dark-theme #benefits.benefits-section .section-subtitle,
+body.dark-theme #benefits.benefits-section h3,
+body.dark-theme #benefits.benefits-section .link-with-arrow {
+    color: var(--dark-text-color-light); /* Ensure text is light */
+}
+body.dark-theme #benefits.benefits-section p {
+    color: #d0d0d0; /* Slightly lighter than main dark text */
+}
+body.dark-theme #benefits.benefits-section .benefit-icon {
+    filter: brightness(0) invert(1); /* Keep icons white */
+}
+body.dark-theme .benefit-card {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker cards */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+body.dark-theme .testimonial-card {
+    background-color: var(--dark-background-alt); /* Darker card background */
+    box-shadow: var(--dark-box-shadow);
+}
+body.dark-theme .testimonial-card blockquote::before {
+    color: var(--primary-color); /* Use dark theme primary */
+}
+body.dark-theme .author-name {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .author-title {
+    color: #B0B0B0;
+}
+body.dark-theme .slider-arrow {
+    background: var(--dark-background-alt);
+    border-color: var(--dark-border-color);
+}
+body.dark-theme .slider-arrow:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+body.dark-theme .slider-arrow:hover img {
+    filter: brightness(0) invert(1);
+}
+body.dark-theme .dot {
+    background-color: var(--dark-border-color);
+}
+body.dark-theme .dot.active {
+    background-color: var(--primary-color);
+}
+
+
+body.dark-theme .faq-question {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .faq-answer p {
+    color: #B0B0B0;
+}
+body.dark-theme .faq-icon {
+    filter: invert(1) brightness(0.8); /* Make icons suitable for dark theme */
+}
+body.dark-theme .faq-contact-cta {
+    background-color: var(--dark-background-light); /* Darker than alt-bg */
+}
+
+
+body.dark-theme .cta-section .cta-container {
+    background-color: var(--primary-color); /* Dark theme primary */
+}
+body.dark-theme .cta-content .section-title,
+body.dark-theme .cta-content p {
+    color: var(--text-color-light); /* Ensure text is light */
+}
+body.dark-theme .cta-actions .btn-primary {
+    background-color: var(--text-color-light);
+    color: var(--primary-color); /* Use dark theme primary for text */
+    border-color: var(--text-color-light);
+}
+body.dark-theme .cta-actions .btn-primary:hover {
+    background-color: #e0e0e0;
+}
+body.dark-theme .cta-actions .btn-secondary-outline {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+body.dark-theme .cta-actions .btn-secondary-outline:hover {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+}
+
+
+body.dark-theme .site-footer-main {
+    background-color: #1c1c1c; /* Even darker for footer */
+    color: #B0B0B0;
+}
+body.dark-theme .footer-logo-column .company-logo-text,
+body.dark-theme .footer-links-group h4 {
+    color: var(--text-color-light);
+}
+body.dark-theme .footer-links a {
+    color: #B0B0B0;
+}
+body.dark-theme .footer-links a:hover {
+    color: var(--primary-color);
+}
+body.dark-theme .social-links img {
+    filter: grayscale(100%) brightness(1.5); /* Lighter grey icons */
+}
+body.dark-theme .social-links a:hover img {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
+}
+body.dark-theme .footer-divider {
+    background-color: #303030;
+}
+body.dark-theme .footer-credits {
+    color: #888888;
+}
+
 /* --- Early Access Modal --- */
+body.dark-theme .modal-content {
+    background-color: var(--dark-background-alt);
+}
+body.dark-theme .modal-close {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .modal-close:hover {
+    color: var(--primary-color);
+}
+body.dark-theme .modal-title {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .modal-subtitle {
+    color: #B0B0B0;
+}
+body.dark-theme .modal-form label {
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .modal-form input[type="text"],
+body.dark-theme .modal-form input[type="email"] {
+    background-color: var(--dark-background-light);
+    border-color: var(--dark-border-color);
+    color: var(--dark-text-color-dark);
+}
+body.dark-theme .modal-form input[type="text"]:focus,
+body.dark-theme .modal-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb, 56, 142, 60), 0.3); /* Assuming primary color is green for rgb */
+}
+body.dark-theme .modal-form .form-error-message {
+    color: #EF9A9A; /* Lighter red for dark theme */
+}
+body.dark-theme .form-status-message.success {
+    background-color: rgba(var(--primary-color-rgb, 56, 142, 60), 0.2);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+body.dark-theme .form-status-message.error {
+    background-color: rgba(211, 47, 47, 0.2); /* Lighter red bg */
+    color: #EF9A9A;
+    border-color: #EF9A9A;
+}
+
+
 .modal-overlay {
     position: fixed;
     top: 0;
