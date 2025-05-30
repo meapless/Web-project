@@ -245,9 +245,17 @@ h4 { font-size: 1.25rem; }/* ~20px */
     align-items: center;
 }
 
-.company-logo {
-    height: 40px; /* Adjust as needed */
+.company-logo-text {
+    font-family: 'Poppins', sans-serif; /* Or your chosen logo font */
+    font-size: 1.75rem; /* Adjust size as needed */
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color); /* Logo color */
+    text-decoration: none;
 }
+.footer-logo-text { /* Specific styling for footer logo if different */
+    color: var(--text-color-light); /* Example: White logo on dark footer */
+}
+
 
 .nav-links {
     display: flex;
@@ -735,11 +743,15 @@ h4 { font-size: 1.25rem; }/* ~20px */
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
 }
-.footer-logo-column .company-logo {
-    height: 35px;
+.footer-logo-column .company-logo-text { /* Ensure footer logo text is also styled */
+    display: inline-block; /* Or block if it's on its own line */
     margin-bottom: var(--spacing-md);
-    filter: brightness(0) invert(1); /* Makes SVG logo white */
 }
+/* Remove filter if it was for SVG */
+/* .footer-logo-column .company-logo {
+    filter: brightness(0) invert(1);
+} */
+
 .footer-links-group h4 {
     font-size: 1.1rem;
     color: var(--text-color-light);
