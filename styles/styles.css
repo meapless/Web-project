@@ -652,16 +652,35 @@ h4 { font-size: 1.25rem; }/* ~20px */
     font-weight: var(--font-weight-medium);
     text-align: left;
     color: var(--text-color-dark);
+    position: relative; /* For pseudo-element positioning */
 }
 .faq-question span {
     flex-grow: 1;
+    padding-right: 30px; /* Space for the pseudo-element icon */
 }
-.faq-icon {
+
+.faq-question::before {
+    content: '+';
+    position: absolute;
+    right: var(--spacing-sm); /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* Make it a bit larger */
+    font-weight: var(--font-weight-regular);
+    transition: transform var(--transition-speed);
+}
+
+.faq-item.active .faq-question::before {
+    content: '–'; /* Or use transform: rotate(45deg) on '+' */
+}
+
+/* Remove old .faq-icon styles if they are no longer needed */
+/*.faq-icon {
     width: 18px;
     height: 18px;
     transition: transform var(--transition-speed);
 }
-.faq-icon.minus { display: none; }
+.faq-icon.minus { display: none; }*/
 
 .faq-answer {
     max-height: 0;
@@ -675,8 +694,8 @@ h4 { font-size: 1.25rem; }/* ~20px */
     color: #555;
 }
 /* Active state for FAQ */
-.faq-item.active .faq-question .faq-icon.plus { display: none; }
-.faq-item.active .faq-question .faq-icon.minus { display: block; }
+/* .faq-item.active .faq-question .faq-icon.plus { display: none; } */
+/* .faq-item.active .faq-question .faq-icon.minus { display: block; } */
 .faq-item.active .faq-answer {
     /* max-height will be set by JS or a large enough value */
     /* padding-bottom: var(--spacing-lg); /* Add padding when open */
@@ -961,9 +980,12 @@ body.dark-theme .faq-question {
 body.dark-theme .faq-answer p {
     color: #B0B0B0;
 }
-body.dark-theme .faq-icon {
-    filter: invert(1) brightness(0.8); /* Make icons suitable for dark theme */
+body.dark-theme .faq-question::before {
+    color: var(--dark-text-color-dark); /* Ensure pseudo-element icon color matches */
 }
+/* body.dark-theme .faq-icon {
+    filter: invert(1) brightness(0.8); 
+} */
 body.dark-theme .faq-contact-cta {
     background-color: var(--dark-background-light); /* Darker than alt-bg */
 }
