@@ -877,13 +877,16 @@ h4 { font-size: 1.25rem; }/* ~20px */
     gap: var(--spacing-md);
 }
     .social-links img {
-        width: 24px;
-        height: 24px;
-        filter: grayscale(100%) brightness(2); /* Makes icons light grey */
-        transition: filter var(--transition-speed);
+        width: 24px; /* Default size */
+        height: 24px; /* Default size */
+        /* filter: grayscale(100%) brightness(2); */ /* Removed to show original SVG colors */
+        transition: transform var(--transition-speed), opacity var(--transition-speed);
+        opacity: 0.8; /* Slightly transparent by default */
     }
     .social-links a:hover img {
-    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
+    /* filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); */ /* Removed, hover can be simpler */
+    opacity: 1;
+    transform: scale(1.1); /* Slight zoom on hover */
     }
 
 /* --- Dark Theme Styles --- */
@@ -1106,10 +1109,13 @@ body.dark-theme .footer-links a:hover {
     color: var(--primary-color);
 }
 body.dark-theme .social-links img {
-    filter: grayscale(100%) brightness(1.5); /* Lighter grey icons */
+    /* filter: grayscale(100%) brightness(1.5); */ /* Keep original colors in dark mode too, or apply a specific dark theme filter if desired */
+    opacity: 0.7; /* Slightly more transparent in dark mode for subtlety */
 }
 body.dark-theme .social-links a:hover img {
-    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
+    /* filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); */
+    opacity: 1;
+    transform: scale(1.1);
 }
 body.dark-theme .footer-divider {
     background-color: #303030;
