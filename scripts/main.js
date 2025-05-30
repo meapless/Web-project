@@ -325,17 +325,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Theme Switcher ---
+    const themeToggleIndicator = document.getElementById('themeToggleIndicator');
+
     if (themeToggleButton) {
-        // Function to apply the current theme
+        // Function to apply the current theme and update indicator
         const applyTheme = (theme) => {
             if (theme === 'dark') {
                 document.body.classList.add('dark-theme');
                 themeToggleButton.textContent = '☀️';
                 themeToggleButton.setAttribute('aria-label', 'Switch to light theme');
+                if (themeToggleIndicator) themeToggleIndicator.textContent = 'Switch to Light Mode';
             } else {
                 document.body.classList.remove('dark-theme');
                 themeToggleButton.textContent = '🌙';
                 themeToggleButton.setAttribute('aria-label', 'Switch to dark theme');
+                if (themeToggleIndicator) themeToggleIndicator.textContent = 'Switch to Dark Mode';
             }
         };
 

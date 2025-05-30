@@ -313,27 +313,28 @@ h4 { font-size: 1.25rem; }/* ~20px */
     padding: var(--spacing-sm) var(--spacing-md);
     position: absolute;
     z-index: 10;
-    bottom: 125%; /* Position above the button */
-    left: 50%;
-    transform: translateX(-50%);
+    /* Adjust positioning: try to the right of the button, aligned vertically */
+    top: 50%;
+    left: calc(100% + 10px); /* 10px to the right of the button */
+    transform: translateY(-50%);
     white-space: nowrap;
     font-size: 0.875rem;
     transition: opacity var(--transition-speed), visibility 0s var(--transition-speed);
     pointer-events: none; /* So it doesn't interfere with button hover */
 }
 
-.theme-toggle-indicator::after { /* Tooltip arrow */
+.theme-toggle-indicator::after { /* Tooltip arrow pointing left */
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
+    top: 50%;
+    right: 100%; /* Arrow on the left side of the tooltip */
+    margin-top: -5px; /* Center arrow vertically */
     border-width: 5px;
     border-style: solid;
-    border-color: var(--text-color-dark) transparent transparent transparent;
+    border-color: transparent var(--text-color-dark) transparent transparent;
 }
 
-.theme-toggle-button:hover + .theme-toggle-indicator,
+.theme-toggle-container:hover .theme-toggle-indicator, /* Show on container hover */
 .theme-toggle-button:focus + .theme-toggle-indicator {
     visibility: visible;
     opacity: 1;
@@ -924,7 +925,7 @@ body.dark-theme .theme-toggle-indicator {
     color: var(--dark-background-light); /* Text color for dark theme tooltip */
 }
 body.dark-theme .theme-toggle-indicator::after {
-    border-top-color: var(--dark-text-color-dark);
+    border-right-color: var(--dark-text-color-dark); /* Arrow color for dark theme */
 }
 
 
