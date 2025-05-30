@@ -106,7 +106,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     background-color: var(--background-alt);
 }
 
-.dark-bg-section {
+.dark-bg-section { /* For sections like "Only the good stuff" and "Benefits" */
     background-color: var(--background-dark-section);
     color: var(--text-color-light);
 }
@@ -116,7 +116,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     color: var(--text-color-light);
 }
 .dark-bg-section p {
-    color: #e0e0e0;
+    color: #e0e0e0; /* Lighter grey for better readability on dark bg */
 }
 .dark-bg-section .button.btn-secondary {
     background-color: var(--text-color-light);
@@ -169,10 +169,10 @@ h4 { font-size: 1.25rem; }/* ~20px */
     background-color: var(--primary-color);
     color: var(--text-color-light);
 }
-.btn-secondary-outline {
+.btn-secondary-outline { /* For CTA section */
     background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: var(--primary-color); /* Or white if on dark bg */
+    border: 1px solid var(--primary-color); /* Or white */
 }
 .dark-bg-section .btn-secondary-outline {
     color: var(--text-color-light);
@@ -208,7 +208,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     margin-bottom: var(--spacing-sm);
 }
 .section-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* ~18px */
     color: #555;
     margin-bottom: var(--spacing-xl);
 }
@@ -225,7 +225,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     font-size: 0.9rem;
 }
 .dark-bg-section .tagline {
-    color: #a5d6a7;
+    color: #a5d6a7; /* Lighter green for dark bg */
 }
 
 
@@ -246,7 +246,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 }
 
 .company-logo {
-    height: 40px;
+    height: 40px; /* Adjust as needed */
 }
 
 .nav-links {
@@ -266,11 +266,11 @@ h4 { font-size: 1.25rem; }/* ~20px */
 }
 
 .nav-signup {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md); /* Slightly smaller padding for nav button */
 }
 
 .nav-toggle {
-    display: none;
+    display: none; /* Hidden on desktop */
     background: none;
     border: none;
     cursor: pointer;
@@ -297,15 +297,20 @@ h4 { font-size: 1.25rem; }/* ~20px */
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
 }
 
-.hamburger::before { top: -8px; }
-.hamburger::after { bottom: -8px; }
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
 
 
 /* --- Hero Section --- */
 .hero-section {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Main green background */
     color: var(--text-color-light);
-    padding: 4rem 0;
+    padding: 4rem 0; /* More padding for hero */
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -323,7 +328,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3rem; /* ~48px */
     font-weight: var(--font-weight-bold);
     line-height: 1.1;
     margin-bottom: var(--spacing-lg);
@@ -340,7 +345,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     display: flex;
     gap: var(--spacing-md);
 }
-.hero-actions .btn-primary {
+.hero-actions .btn-primary { /* Specific style for hero primary button if needed */
     background-color: var(--text-color-light);
     color: var(--primary-color);
     border-color: var(--text-color-light);
@@ -373,9 +378,9 @@ h4 { font-size: 1.25rem; }/* ~20px */
 .hero-image-col img {
     border-radius: var(--border-radius);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    object-fit: cover;
+    object-fit: cover; /* Ensure images fill their containers */
 }
-.hero-image-col img:nth-child(1) { height: 200px; }
+.hero-image-col img:nth-child(1) { height: 200px; } /* Adjust heights as per design */
 .hero-image-col img:nth-child(2) { height: 150px; }
 .hero-image-col img:nth-child(3) { height: 250px; }
 
@@ -403,7 +408,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 .feature-image {
     flex: 1;
-    max-width: 500px;
+    max-width: 500px; /* Control image size */
 }
 .feature-image img {
     border-radius: var(--border-radius);
@@ -416,7 +421,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 .ingredient-highlights {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Two columns */
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
@@ -435,7 +440,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 }
 
 /* --- Benefits Section --- */
-#benefits.benefits-section {
+#benefits.benefits-section { /* More specific selector for dark bg styling */
     background-color: var(--background-dark-section);
     color: var(--text-color-light);
 }
@@ -451,7 +456,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     color: var(--text-color-light);
 }
 #benefits.benefits-section .benefit-icon {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Make icons white */
 }
 
 .benefits-grid {
@@ -462,10 +467,10 @@ h4 { font-size: 1.25rem; }/* ~20px */
 }
 
 .benefit-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.05); /* Slight transparency */
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
-    text-align: left;
+    text-align: left; /* Aligns with design */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
@@ -474,9 +479,10 @@ h4 { font-size: 1.25rem; }/* ~20px */
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 .benefit-icon {
-    width: 48px;
+    width: 48px; /* Adjust icon size */
     height: 48px;
     margin-bottom: var(--spacing-lg);
+    /* If SVGs, you can use 'fill: var(--text-color-light);' */
 }
 .benefit-card h3 {
     margin-bottom: var(--spacing-sm);
@@ -485,19 +491,19 @@ h4 { font-size: 1.25rem; }/* ~20px */
 /* --- Testimonials Section --- */
 .testimonial-slider {
     margin-top: var(--spacing-xl);
-    position: relative;
+    position: relative; /* For slider controls if absolutely positioned */
 }
 .testimonial-cards {
-    display: flex;
+    display: flex; /* This will be handled by JS for sliding, initially show one or two */
     gap: var(--spacing-xl);
-    overflow-x: auto;
-    padding-bottom: var(--spacing-md);
-    scroll-snap-type: x mandatory;
+    overflow-x: auto; /* For basic horizontal scroll if JS is not implemented */
+    padding-bottom: var(--spacing-md); /* Space for scrollbar if visible */
+    scroll-snap-type: x mandatory; /* For smoother scrolling if no JS */
 }
 
 .testimonial-card {
-    flex: 0 0 calc(50% - (var(--spacing-xl) / 2));
-    min-width: 300px;
+    flex: 0 0 calc(50% - (var(--spacing-xl) / 2)); /* Show two cards, adjust for one */
+    min-width: 300px; /* Minimum width for smaller screens before wrapping if not JS controlled */
     background-color: var(--background-light);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
@@ -505,7 +511,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     scroll-snap-align: start;
 }
 .stars {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Or your star color */
     font-size: 1.2rem;
     margin-bottom: var(--spacing-md);
 }
@@ -530,7 +536,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     align-items: center;
     gap: var(--spacing-md);
 }
-.testimonial-author img.avatar-image { /* More specific selector */
+.testimonial-author img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -547,7 +553,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 .slider-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Center dots, arrows at ends */
     align-items: center;
     margin-top: var(--spacing-xl);
 }
@@ -624,17 +630,21 @@ h4 { font-size: 1.25rem; }/* ~20px */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-    padding-left: var(--spacing-xs);
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+    padding-left: var(--spacing-xs); /* Optional indent for answer */
 }
 .faq-answer p {
     padding-bottom: var(--spacing-lg);
     font-size: 0.95rem;
     color: #555;
 }
+/* Active state for FAQ */
 .faq-item.active .faq-question .faq-icon.plus { display: none; }
 .faq-item.active .faq-question .faq-icon.minus { display: block; }
-
+.faq-item.active .faq-answer {
+    /* max-height will be set by JS or a large enough value */
+    /* padding-bottom: var(--spacing-lg); /* Add padding when open */
+}
 
 .faq-contact-cta {
     margin-top: var(--spacing-xxl);
@@ -642,8 +652,8 @@ h4 { font-size: 1.25rem; }/* ~20px */
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Default stack */
+    align-items: center; /* Center for default stack */
     text-align: center;
     gap: var(--spacing-md);
 }
@@ -656,15 +666,15 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 
 /* --- CTA Section (Be the First to Try) --- */
-.cta-section .cta-container {
+.cta-section .cta-container { /* Using .cta-container defined in HTML */
     display: flex;
     align-items: center;
     gap: var(--spacing-xxl);
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* From design */
     color: var(--text-color-light);
     padding: var(--spacing-xxl);
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: hidden; /* If image peeks out */
 }
 .cta-content {
     flex: 1;
@@ -684,6 +694,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     display: flex;
     gap: var(--spacing-md);
 }
+/* CTA buttons on green background */
 .cta-actions .btn-primary {
     background-color: var(--text-color-light);
     color: var(--primary-color);
@@ -693,7 +704,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
     background-color: #f0f0f0;
     border-color: #f0f0f0;
 }
-.cta-actions .btn-secondary-outline {
+.cta-actions .btn-secondary-outline { /* Specifically for this section on dark bg */
     color: var(--text-color-light);
     border-color: var(--text-color-light);
 }
@@ -704,7 +715,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 .cta-image {
     flex: 1;
-    max-width: 450px;
+    max-width: 450px; /* Adjust as needed */
 }
 .cta-image img {
     border-radius: var(--border-radius);
@@ -714,8 +725,8 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 /* --- Footer --- */
 .site-footer-main {
-    background-color: var(--text-color-dark);
-    color: #cccccc;
+    background-color: var(--text-color-dark); /* Dark footer background */
+    color: #cccccc; /* Light grey text */
     padding: var(--spacing-xxl) 0 var(--spacing-lg);
 }
 .footer-content {
@@ -727,7 +738,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 .footer-logo-column .company-logo {
     height: 35px;
     margin-bottom: var(--spacing-md);
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Makes SVG logo white */
 }
 .footer-links-group h4 {
     font-size: 1.1rem;
@@ -748,19 +759,144 @@ h4 { font-size: 1.25rem; }/* ~20px */
     display: flex;
     gap: var(--spacing-md);
 }
-.social-links img {
-    width: 24px;
-    height: 24px;
-    filter: grayscale(100%) brightness(2);
-    transition: filter var(--transition-speed);
+    .social-links img {
+        width: 24px;
+        height: 24px;
+        filter: grayscale(100%) brightness(2); /* Makes icons light grey */
+        transition: filter var(--transition-speed);
+    }
+    .social-links a:hover img {
+        filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%); /* Primary color on hover */
+    }
+
+/* --- Early Access Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Ensure it's on top */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed), visibility 0s var(--transition-speed);
 }
-.social-links a:hover img {
-    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(80deg) saturate(500%);
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition-speed);
 }
-.footer-divider {
+
+.modal-content {
+    background-color: var(--background-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px; /* Max width of the modal */
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform var(--transition-speed);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 1.5rem; /* Larger close button */
+    color: var(--text-color-dark);
+    line-height: 1;
+    padding: var(--spacing-xs);
+}
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+.modal-title {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.modal-form .form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.modal-form label {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-sm);
+}
+
+.modal-form input[type="text"],
+.modal-form input[type="email"] {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+.modal-form input[type="text"]:focus,
+.modal-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color), 0.2);
+}
+
+.modal-form .form-error-message {
+    display: block;
+    color: #D32F2F; /* Red for errors */
+    font-size: 0.875rem;
+    margin-top: var(--spacing-xs);
+    min-height: 1em; /* Reserve space to prevent layout shifts */
+}
+
+.modal-form .modal-submit {
+    width: 100%;
+    padding: var(--spacing-md); /* Larger submit button */
+    font-size: 1.1rem;
+    margin-top: var(--spacing-sm); /* Space above submit button */
+}
+
+.form-status-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+}
+.form-status-message.success {
+    background-color: #E8F5E9; /* Light green for success */
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-color);
+}
+.form-status-message.error {
+    background-color: #FFEBEE; /* Light red for error */
+    color: #C62828;
+    border: 1px solid #D32F2F;
+}
+
+
+    .footer-divider {
     border: 0;
     height: 1px;
-    background-color: #444444;
+    background-color: #444444; /* Darker divider */
     margin: var(--spacing-xl) 0;
 }
 .footer-credits {
@@ -773,6 +909,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
 
 /* --- Responsive Design --- */
 
+/* Medium screens (Tablets) */
 @media (max-width: 992px) {
     h1 { font-size: 2.25rem; }
     h2 { font-size: 1.75rem; }
@@ -792,6 +929,7 @@ h4 { font-size: 1.25rem; }/* ~20px */
         justify-content: center;
     }
     .hero-image-grid {
+        /* Could stack columns or reduce image sizes */
         gap: var(--spacing-sm);
     }
     .hero-image-col img:nth-child(1) { height: 150px; }
@@ -813,8 +951,8 @@ h4 { font-size: 1.25rem; }/* ~20px */
     }
 
     .ingredient-highlights {
-        grid-template-columns: 1fr;
-        text-align: left;
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        text-align: left; /* Keep text left aligned within item */
     }
     .good-stuff-actions {
         justify-content: center;
@@ -838,19 +976,20 @@ h4 { font-size: 1.25rem; }/* ~20px */
     }
 
     .testimonial-card {
-        flex: 0 0 calc(100% - var(--spacing-md));
+        flex: 0 0 calc(100% - var(--spacing-md)); /* Show one card on tablets */
     }
 }
 
+/* Small screens (Mobile) */
 @media (max-width: 768px) {
     .nav-toggle {
-        display: block;
-        z-index: 1001;
+        display: block; /* Show hamburger */
+        z-index: 1001; /* Above nav links */
     }
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -100%; /* Start off-screen */
         width: 70%;
         height: 100vh;
         background-color: var(--background-light);
@@ -861,21 +1000,22 @@ h4 { font-size: 1.25rem; }/* ~20px */
         gap: var(--spacing-md);
     }
     .nav-links.open {
-        right: 0;
+        right: 0; /* Slide in */
     }
     .nav-link {
         font-size: 1.2rem;
         padding: var(--spacing-md) 0;
     }
     .nav-link:hover, .nav-link.active {
-        border-bottom: none;
+        border-bottom: none; /* Remove bottom border for mobile nav */
         color: var(--primary-color);
     }
-    .site-header .nav-signup {
+    .site-header .nav-signup { /* Hide signup button in nav bar, can be moved into menu */
         display: none;
     }
+    /* Hamburger animation when menu is open */
     .nav-toggle.open .hamburger {
-        background-color: transparent;
+        background-color: transparent; /* Middle line disappears */
     }
     .nav-toggle.open .hamburger::before {
         transform: rotate(45deg);
@@ -892,27 +1032,27 @@ h4 { font-size: 1.25rem; }/* ~20px */
         padding: 3rem 0;
     }
     .hero-image-grid {
-        display: none;
+        display: none; /* Hide image grid on small mobile, too cluttered */
     }
 
     .benefits-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack benefit cards */
     }
 
-    .testimonial-slider {
-        padding: 0 var(--spacing-sm);
+    .testimonial-slider { /* Hide slider controls on mobile, rely on swipe */
+        padding: 0 var(--spacing-sm); /* Add some padding if cards go edge-to-edge */
     }
     .slider-controls {
         display: none;
     }
     .testimonial-cards {
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll; /* Ensure horizontal scroll for swipe */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         scroll-snap-type: x mandatory;
     }
     .testimonial-card {
-        flex: 0 0 90%;
-        margin-right: var(--spacing-md);
+        flex: 0 0 90%; /* One card slightly smaller than full width */
+        margin-right: var(--spacing-md); /* Spacing between cards */
     }
     .testimonial-card:last-child {
         margin-right: 0;
@@ -927,14 +1067,14 @@ h4 { font-size: 1.25rem; }/* ~20px */
     }
     .faq-contact-cta {
         flex-direction: column;
-        align-items: stretch;
+        align-items: stretch; /* Make button full width if desired */
     }
     .faq-contact-cta .button {
         width: 100%;
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack footer columns */
         text-align: center;
     }
     .footer-logo-column .company-logo {
