@@ -24,12 +24,16 @@
                     <li><a href="#good-stuff" class="nav-link">About Us</a></li> <!-- "Only the Good Stuff" can be part of About Us -->
                     <li><a href="#faq" class="nav-link">Contact Us</a></li> <!-- FAQ has a contact section -->
                 </ul>
-                <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle theme">
-                    <!-- Icon will be added via CSS or JS, or use a text placeholder for now -->
-                    🌙
-                </button>
             </nav>
-            <a href="#early-access-cta" class="button btn-primary nav-signup">Sign Up</a>
+            <div class="header-actions-group"> <!-- New wrapper for signup and theme toggle -->
+                <a href="#early-access-cta" class="button btn-primary nav-signup">Sign Up</a>
+                <div class="theme-toggle-container">
+                    <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle theme">
+                        🌙
+                    </button>
+                    <span id="themeToggleIndicator" class="theme-toggle-indicator">Switch to Dark Mode</span>
+                </div>
+            </div>
         </div>
     </header>
 
