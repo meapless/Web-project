@@ -326,16 +326,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Theme Switcher ---
     if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            // Update button text/icon if needed
-            if (document.body.classList.contains('dark-theme')) {
-                themeToggleButton.textContent = '☀️'; // Sun icon for light mode
+        // Function to apply the current theme
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggleButton.textContent = '☀️';
                 themeToggleButton.setAttribute('aria-label', 'Switch to light theme');
             } else {
-                themeToggleButton.textContent = '🌙'; // Moon icon for dark mode
+                document.body.classList.remove('dark-theme');
+                themeToggleButton.textContent = '🌙';
                 themeToggleButton.setAttribute('aria-label', 'Switch to dark theme');
             }
+        };
+
+        // Check Local Storage for saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else {
+            // Default to light theme or check system preference if desired
+            applyTheme('light'); 
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            let currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme); // Save the new theme
         });
     }
 
