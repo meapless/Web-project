@@ -150,10 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalNameInput = document.getElementById('modalName');
     const modalEmailInput = document.getElementById('modalEmail');
     const formStatusMessage = document.getElementById('formStatusMessage');
+    const themeToggleButton = document.getElementById('themeToggle');
     
     // Specific triggers for the modal
     const openModalTriggers = document.querySelectorAll(
-        '.nav-signup, .hero-actions a.button[href="#early-access-cta"], .cta-actions a.button[href="#"]'
+        '.nav-signup, .hero-actions a.button[href="#early-access-cta"], .cta-actions a.button[href="#"]' // Adjusted CTA selector
     );
     const closeModalButton = earlyAccessModal ? earlyAccessModal.querySelector('.modal-close') : null;
 
@@ -319,6 +320,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 formStatusMessage.textContent = 'Please correct the errors above.';
                 formStatusMessage.classList.add('error');
+            }
+        });
+    }
+
+    // --- Theme Switcher ---
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            // Update button text/icon if needed
+            if (document.body.classList.contains('dark-theme')) {
+                themeToggleButton.textContent = '☀️'; // Sun icon for light mode
+                themeToggleButton.setAttribute('aria-label', 'Switch to light theme');
+            } else {
+                themeToggleButton.textContent = '🌙'; // Moon icon for dark mode
+                themeToggleButton.setAttribute('aria-label', 'Switch to dark theme');
             }
         });
     }
